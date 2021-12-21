@@ -35,3 +35,19 @@ Run the test script to run unit tests and integration tests.
 ```
 ./testprebid.sh
 ```
+
+## Prebid Mobile from the "playwire" branch
+
+1. After cloning the repo, you have 2 options to to generate the Prebid Mobile library:
+    - From the root directory run
+    
+    ```sh
+        ./gradlew -i --no-daemon :PrebidMobile-core:assembleRelease
+    ```
+
+    - Open root directory in the Android Studio, expand `Gradle` menu and run `PrebidMobile-core > Tasks > other > assembleRelease`.
+    <img src="readme-resources/gradle_tasks.png" alt="assembleRelease" width="400"/>
+
+2. Go to the `./PrebidMobile/PrebidMobile-core/build/outputs/aar` folder and rename `PrebidMobile-core-release.aar` to `prebid-mobile-sdk.arr`.
+
+3. Copy and paste`prebid-mobile-sdk.arr` to your `PlaywireSDK_Prebid/libs` folder.
