@@ -401,6 +401,9 @@ class PrebidServerAdapter implements DemandAdapter {
             JSONObject ext = new JSONObject();
             ext.put("omidpn", TargetingParams.getOmidPartnerName());
             ext.put("omidpv", TargetingParams.getOmidPartnerVersion());
+
+            ext.put("schain", TargetingParams.getSchain());
+
             source.put("ext", ext);
 
             return source;

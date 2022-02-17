@@ -22,6 +22,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
+import org.json.JSONObject;
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -56,6 +58,9 @@ public class TargetingParams {
 
     @Nullable
     private static String omidPartnerVersion;
+
+    @Nullable
+    private static JSONObject schain;
 
     //endregion
 
@@ -572,6 +577,16 @@ public class TargetingParams {
 
     public static void setOmidPartnerVersion(@Nullable String omidPartnerVersion) {
         TargetingParams.omidPartnerVersion = omidPartnerVersion;
+    }
+
+    //schain signaling
+    @Nullable
+    public static JSONObject getSchain() {
+        return schain;
+    }
+
+    public static void setSchain(@Nullable JSONObject schain) {
+        TargetingParams.schain = schain;
     }
 
 //endregion
