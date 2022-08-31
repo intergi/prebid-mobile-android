@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="FullScreenDialogTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorBackground">@android:color/black</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="android:Theme.Light" />
+
+    <style name="AppTheme" parent="AppBaseTheme" />
+
+</resources>

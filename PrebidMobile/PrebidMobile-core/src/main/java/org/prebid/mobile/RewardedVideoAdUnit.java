@@ -16,12 +16,16 @@
 
 package org.prebid.mobile;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import org.prebid.mobile.api.data.AdFormat;
+import org.prebid.mobile.rendering.models.AdPosition;
 
 public class RewardedVideoAdUnit extends VideoBaseAdUnit {
 
     public RewardedVideoAdUnit(@NonNull String configId) {
-        super(configId, AdType.REWARDED_VIDEO);
+        super(configId, AdFormat.VAST);
+        configuration.setRewarded(true);
+        configuration.setAdPosition(AdPosition.FULLSCREEN);
     }
 
 }

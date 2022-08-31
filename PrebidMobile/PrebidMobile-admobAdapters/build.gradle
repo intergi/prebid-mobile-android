@@ -1,0 +1,8 @@
+apply from: '../android.gradle'
+apply from: '../publisher.gradle'
+apply from: '../tests.gradle'
+
+dependencies {
+    implementation project(":PrebidMobile")
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
+}

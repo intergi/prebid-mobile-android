@@ -1,33 +1,12 @@
+# Save names for all Prebid classes
+-keepnames class org.prebid.mobile.**
+-keepnames interface org.prebid.mobile.**
+-keepnames enum org.prebid.mobile.**
 
-# GAM
-#pre GAMv20.0
--keep class com.google.android.gms.ads.doubleclick.PublisherAdRequest {
-    public android.os.Bundle getCustomTargeting();
-}
-
--keep class com.google.android.gms.ads.doubleclick.PublisherAdRequest$Builder {
-    public com.google.android.gms.ads.doubleclick.PublisherAdRequest build();
-    public com.google.android.gms.ads.doubleclick.PublisherAdRequest$Builder addCustomTargeting(java.lang.String, java.lang.String);
-}
-
-#GAMv20.0
--keep class com.google.android.gms.ads.admanager.AdManagerAdRequest {
-    public android.os.Bundle getCustomTargeting();
-}
-
--keep class com.google.android.gms.ads.admanager.AdManagerAdRequest$Builder {
-    public com.google.android.gms.ads.admanager.AdManagerAdRequest build();
-    public com.google.android.gms.ads.admanager.AdManagerAdRequest$Builder addCustomTargeting(java.lang.String, java.lang.String);
-}
-
-# MoPub Just to be sure
--keep class com.mopub.mobileads.MoPubView {
-    public java.lang.String getKeywords();
-    public void setKeywords(java.lang.String);
-}
-
--keep class com.mopub.mobileads.MoPubInterstitial {
-    public java.lang.String getKeywords();
-    public void setKeywords(java.lang.String);
-}
-
+# Google Ad Manager and AdMob
+-keep class org.prebid.mobile.PrebidNativeAd { *; }
+-keep class com.google.android.gms.ads.admanager.AdManagerAdView { *; }
+-keep class com.google.android.gms.ads.admanager.AdManagerAdRequest { *; }
+-keep class com.google.android.gms.ads.admanager.AdManagerAdRequest$Builder { *; }
+-keep interface com.google.android.gms.ads.nativead.NativeCustomFormatAd { *; }
+-keep interface com.google.android.gms.ads.formats.NativeCustomTemplateAd { *; }

@@ -16,19 +16,21 @@
 
 package org.prebid.mobile;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
+import org.prebid.mobile.api.data.AdFormat;
+
+import java.util.HashSet;
 
 public class VideoAdUnit extends VideoBaseAdUnit {
 
-    private final AdSize adSize;
-
     public VideoAdUnit(@NonNull String configId, int width, int height) {
-        super(configId, AdType.VIDEO);
-        adSize = new AdSize(width, height);
+        super(configId, AdFormat.VAST);
+        configuration.addSize(new AdSize(width, height));
     }
 
     AdSize getAdSize() {
-        return adSize;
+        HashSet<AdSize> sizes = configuration.getSizes();
+        return sizes.iterator().next();
     }
 
 }
